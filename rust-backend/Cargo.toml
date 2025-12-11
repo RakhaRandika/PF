@@ -1,0 +1,19 @@
+[package]
+name = "face-blur-backend"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = { version = "0.7", features = ["multipart"] }
+tokio = { version = "1.35", features = ["full"] }
+tower = "0.4"
+tower-http = { version = "0.5", features = ["cors", "fs"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+image = "0.24"
+rayon = "1.8"
+base64 = "0.21"
+reqwest = { version = "0.11", features = ["json", "multipart"] }
+tracing = "0.1"
+tracing-subscriber = "0.3"
+anyhow = "1.0"
