@@ -14,10 +14,6 @@ CORS(app)
 MODEL_PATH = os.path.join(os.path.dirname(__file__), '..', 'best (4).pt')
 model = YOLO(MODEL_PATH)
 
-@app.route('/health', methods=['GET'])
-def health():
-    return jsonify({"status": "healthy", "service": "face-detection"})
-
 @app.route('/detect', methods=['POST'])
 def detect_faces():
     try:
@@ -75,5 +71,4 @@ def detect_faces():
 
 if __name__ == '__main__':
     print("Starting Face Detection Service...")
-    print(f"Model loaded from: {MODEL_PATH}")
     app.run(host='0.0.0.0', port=5000, debug=True)

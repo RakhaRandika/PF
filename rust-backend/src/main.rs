@@ -27,7 +27,6 @@ async fn main() {
 
     let app = Router::new()
         .route("/", get(root))
-        .route("/health", get(health))
         .route("/process", post(process_image))
         .layer(cors);
 
