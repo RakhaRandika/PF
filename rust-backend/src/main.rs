@@ -31,7 +31,7 @@ async fn main() {
         .layer(cors);
 
     let addr = SocketAddr::from(([0, 0, 0, 0], 3000));
-    tracing::info!("🚀 Rust backend listening on {}", addr);
+    tracing::info!("Rust backend listening on {}", addr);
 
     let listener = tokio::net::TcpListener::bind(&addr).await.unwrap();
     axum::serve(listener, app)
@@ -43,12 +43,6 @@ async fn root() -> &'static str {
     "Face Blur Backend API"
 }
 
-async fn health() -> Json<serde_json::Value> {
-    Json(json!({
-        "status": "healthy",
-        "service": "face-blur-backend"
-    }))
-}
 
 async fn process_image(mut multipart: Multipart) -> Result<Json<ProcessResponse>, StatusCode> {
     let mut image_data: Option<Vec<u8>> = None;

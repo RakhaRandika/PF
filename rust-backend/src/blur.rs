@@ -39,7 +39,7 @@ pub fn process_image_with_blur(
         }
     }
 
-    // Convert to JPEG
+
     let mut output = Vec::new();
     let cursor = Cursor::new(&mut output);
     

@@ -39,7 +39,7 @@ def detect_faces():
             boxes = result.boxes
             print(f"Number of boxes: {len(boxes)}")
             for box in boxes:
-                # Get coordinates
+                
                 x1, y1, x2, y2 = box.xyxy[0].cpu().numpy()
                 confidence = float(box.conf[0])
                 
@@ -53,7 +53,7 @@ def detect_faces():
                     "confidence": confidence
                 })
         
-        print(f"Total faces detected: {len(faces)}")
+        print(f"jumblah wajah: {len(faces)}")
         
         _, buffer = cv2.imencode('.jpg', img)
         img_base64 = base64.b64encode(buffer).decode('utf-8')
