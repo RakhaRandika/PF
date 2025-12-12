@@ -90,9 +90,9 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1 className="title">Face Blur Application</h1>
+        <h1 className="title">Face Blur detection</h1>
         <p className="subtitle">
-          Upload an image to automatically detect and blur faces
+          Upload foto untuk mendeteksi dan mengaburkan wajah secara otomatis
         </p>
 
         <div className="upload-section">
@@ -104,7 +104,7 @@ function App() {
             className="file-input"
           />
           <label htmlFor="file-input" className="file-label">
-            Choose Image
+            Pilih Gambar
           </label>
 
           {selectedFile && (
@@ -119,7 +119,7 @@ function App() {
               disabled={loading}
               className="info-badge-gradient"
             >
-              {loading ? "Processing..." : "Process & Blur Faces"}
+              {loading ? "Processing..." : "proses Gambar"}
             </button>
             <button onClick={handleReset} className="info-badge-gradient">
               Reset
@@ -151,7 +151,7 @@ function App() {
         {loading && (
           <div className="loading-overlay">
             <div className="spinner"></div>
-            <p>Processing image with AI...</p>
+            <p>loading ...</p>
           </div>
         )}
       </div>
